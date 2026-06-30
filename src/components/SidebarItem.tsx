@@ -11,16 +11,18 @@ type SidebarItemProps = {
 import { useAppContext } from "../context/AppContext";
 
 const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
-    
-    const {isCollapsed} = useAppContext();
-  
-    return (
+  const { isCollapsed } = useAppContext();
+
+  return (
     <li
-      className={`flex items-center gap-3 p-2 rounded-md cursor-pointer
-    hover:bg-gray-700 transition-colors duration-300 ${active ? "bg-gray-700" : ""}`}
+      className={`flex items-center gap-3 p-2 rounded-md cursor-pointer hover:bg-gray-700 transition-all duration-300 ease-in-out ${active ? "bg-gray-700" : ""}`}
     >
-      <div className="text-3xl text-white">{icon}</div>
-      <span className={`overflow-hidden text-white ${isCollapsed ? "w-0" : "w-52"}`}>{label}</span>
+      <div className="text-3xl text-white shrink-0">{icon}</div>
+      <span
+        className={`overflow-hidden text-white transition-all duration-300 ease-in-out ${isCollapsed ? "w-0" : "w-40"}`}
+      >
+        {label}
+      </span>
     </li>
   );
 };
