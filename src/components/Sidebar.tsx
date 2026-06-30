@@ -5,9 +5,13 @@ type SidebarProps = {
 };
 
 import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { useState } from "react";
 
 
 const Sidebar = ({children} : SidebarProps ) => {
+  
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  
   return (
     <div className="h-screen">
       <div className="max-w-1/6 h-full flex flex-col border-r border-gray-700 bg-[#0A0F16] shadow-sm">
@@ -16,7 +20,8 @@ const Sidebar = ({children} : SidebarProps ) => {
           <span className="text-lg text-white font-semibold cursor-pointer">
             FinTracker
           </span>
-          <button className="text-white text-4xl ml-auto cursor-pointer hover:text-gray-400 transition-colors duration-300">
+          <button onClick={() => setIsCollapsed(!isCollapsed)}
+          className="text-white text-4xl ml-auto cursor-pointer hover:text-gray-400 transition-colors duration-300">
             <FaArrowAltCircleLeft />
           </button>
         </div>
