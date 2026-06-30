@@ -1,7 +1,12 @@
+import type { ReactNode } from "react";
+type SidebarProps = {
+  children: ReactNode;
+};
+
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 
-const Sidebar = ({}) => {
+const Sidebar = ({children} : SidebarProps ) => {
   return (
     <div className="h-screen">
       <div className="max-w-1/6 h-full flex flex-col border-r border-gray-700 bg-[#0A0F16] shadow-sm">
@@ -14,6 +19,9 @@ const Sidebar = ({}) => {
             <FaArrowAltCircleLeft />
           </button>
         </div>
+        <ul className="flex flex-col gap-2 p-4 text-gray-400">
+          {children}
+        </ul>
       </div>
     </div>
   );
