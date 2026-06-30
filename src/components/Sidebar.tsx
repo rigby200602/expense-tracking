@@ -29,7 +29,8 @@ const Sidebar = ({ children }: SidebarProps) => {
           </span>
           <button
             onClick={() => setIsCollapsed((curr) => !curr)}
-            className="text-white text-4xl ml-auto cursor-pointer hover:text-gray-400 transition-colors duration-300"
+            className={` ${isCollapsed ? "ml-1" : "ml-auto"} 
+              text-white text-4xl pr-1 cursor-pointer hover:text-gray-400 transition-colors duration-300`}
           >
             {isCollapsed ? <FaArrowAltCircleRight /> : <FaArrowAltCircleLeft />}
           </button>
