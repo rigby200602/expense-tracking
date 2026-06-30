@@ -4,7 +4,7 @@ type SidebarProps = {
   children: ReactNode;
 };
 
-import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { useState } from "react";
 
 
@@ -22,7 +22,7 @@ const Sidebar = ({children} : SidebarProps ) => {
           </span>
           <button onClick={() => setIsCollapsed(curr => !curr)}
           className="text-white text-4xl ml-auto cursor-pointer hover:text-gray-400 transition-colors duration-300">
-            <FaArrowAltCircleLeft />
+            {isCollapsed ? <FaArrowAltCircleLeft /> : <FaArrowAltCircleRight />}
           </button>
         </div>
         <ul className="flex flex-col gap-2 p-4 text-gray-400">
