@@ -1,28 +1,43 @@
-import { createContext } from "react";
-import type { ReactNode } from "react";
-import { useState } from "react";
+import {
+  createContext,
+  useContext,
+  useMemo,
+  useState,
+  type Dispatch,
+  type ReactNode,
+  type SetStateAction,
+} from "react";
 
-// Define the interface for the context value
 type AppContextType = {
-  isCollaspe: boolean;
+  isCollapsed: boolean;
+  setIsCollapsed: Dispatch<SetStateAction<boolean>>;
 };
 
-// Create the context with an initial value of undefined
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-// Define the Provider props type
-type AppProvider = {
+type AppProviderProps = {
   children: ReactNode;
 };
 
-export const AppProvider = ({ children }: AppProvider) => {
-  const [isCollaspe, setIsCollaspe] = useState(false);
+export const AppProvider = ({ children }: AppProviderProps) => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const value: AppContextType = {
-    isCollaspe
-  };
-  
-  <AppContext.Provider value={value}>
-    {children}
-  </AppContext.Provider>;
+  const value = useMemo(
+    () => ({ isCollapsed, setIsCollapsed }),
+    [isCollapsed]
+  );
+
+  return (
+    <AppContext.Provider value={value}>{children}</AppContext.Provider>
+  );
+};
+
+export const useAppContext = () => {
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error("useAppContext must be used within AppProvider");
+  }
+
+  return context;
 };
