@@ -20,7 +20,7 @@ const Sidebar = ({children} : SidebarProps ) => {
           <span className="text-lg text-white font-semibold cursor-pointer">
             FinTracker
           </span>
-          <button onClick={() => setIsCollapsed(!isCollapsed)}
+          <button onClick={() => setIsCollapsed(curr => !curr)}
           className="text-white text-4xl ml-auto cursor-pointer hover:text-gray-400 transition-colors duration-300">
             <FaArrowAltCircleLeft />
           </button>
