@@ -1,3 +1,4 @@
+// Using ReactNode as a type for children prop
 import type { ReactNode } from "react";
 type SidebarProps = {
   children: ReactNode;
