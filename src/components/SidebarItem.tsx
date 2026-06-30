@@ -16,11 +16,11 @@ const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
   
     return (
     <li
-      className={`flex items-center gap-3 p-2 rounded-md cursor-pointer 
+      className={`flex items-center gap-3 p-2 rounded-md cursor-pointer
     hover:bg-gray-700 transition-colors duration-300 ${active ? "bg-gray-700" : ""}`}
     >
-      {icon}
-      <span className={`overflow-hidden ${isCollapsed ? "w-0" : "w-52"}`}>{label}</span>
+      <div className="text-3xl text-white">{icon}</div>
+      <span className={`overflow-hidden text-white ${isCollapsed ? "w-0" : "w-52"}`}>{label}</span>
     </li>
   );
 };
