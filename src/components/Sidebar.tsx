@@ -5,12 +5,12 @@ type SidebarProps = {
 };
 
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import { useState } from "react";
+import { useAppContext } from "../context/AppContext";
 
 
 const Sidebar = ({children} : SidebarProps ) => {
   
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const {isCollapsed, setIsCollapsed} = useAppContext();
   
   return (
     <div className="h-screen">
