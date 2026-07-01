@@ -15,14 +15,25 @@ const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
 
   return (
     <li
-      className={`flex items-center gap-3 p-2 rounded-md cursor-pointer hover:bg-gray-700 transition-all duration-300 ease-in-out ${active ? "bg-gray-700" : ""}`}
+      className={`group relative flex items-center gap-3 p-2 rounded-md cursor-pointer hover:bg-gray-700 transition-all duration-300 ease-in-out ${active ? "bg-gray-700" : ""}`}
     >
-      <div className="text-3xl text-white shrink-0">{icon}</div>
+      <div className="shrink-0 text-3xl text-white">{icon}</div>
       <span
-        className={`overflow-hidden text-white transition-all duration-300 ease-in-out ${isCollapsed ? "w-0" : "w-40"}`}
+        className={`overflow-hidden whitespace-nowrap text-white font-medium
+          transition-all duration-300 ease-in-out ${isCollapsed ? 
+            "w-0 opacity-0" : "w-40 opacity-100"}`}
       >
         {label}
       </span>
+      {/* hover transition effect */}
+      {isCollapsed && (
+        <div className="absolute left-full ml-3 rounded-md bg-gray-700 
+        px-2 py-1 text-sm text-white opacity-0 
+        invisible -translate-x-3 transition-all duration-300 ease-in-out 
+        group-hover:visible group-hover:opacity-100 group-hover:translate-x-3">
+          {label}
+        </div>
+      )}
     </li>
   );
 };
