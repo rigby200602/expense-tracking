@@ -1,11 +1,11 @@
 // Using ReactNode as a type for children prop
 import type { ReactNode } from "react";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { useAppContext } from "../context/AppContext";
+
 type SidebarProps = {
   children: ReactNode;
 };
-
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import { useAppContext } from "../context/AppContext";
 
 const Sidebar = ({ children }: SidebarProps) => {
   const { isCollapsed, setIsCollapsed } = useAppContext();
