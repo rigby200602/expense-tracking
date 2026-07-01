@@ -20,17 +20,22 @@ const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
       <div className="shrink-0 text-3xl text-white">{icon}</div>
       <span
         className={`overflow-hidden whitespace-nowrap text-white font-medium
-          transition-all duration-300 ease-in-out ${isCollapsed ? 
-            "w-0 opacity-0" : "w-40 opacity-100"}`}
+          transition-all duration-300 ease-in-out ${
+            isCollapsed ? "w-0 opacity-0" : "w-40 opacity-100"
+          }`}
       >
         {label}
       </span>
-      {/* hover transition effect */}
+
+      {/* When the sidebar is collapsed, the label text is hidden.
+      A tooltip appears on hover with a smooth fade and slide-in effect. */}
       {isCollapsed && (
-        <div className="absolute left-full ml-3 rounded-md bg-gray-700 
+        <div
+          className="absolute left-full ml-3 rounded-md bg-gray-700 
         px-2 py-1 text-sm text-white opacity-0 
         invisible -translate-x-3 transition-all duration-300 ease-in-out 
-        group-hover:visible group-hover:opacity-100 group-hover:translate-x-3">
+        group-hover:visible group-hover:opacity-100 group-hover:translate-x-3"
+        >
           {label}
         </div>
       )}
