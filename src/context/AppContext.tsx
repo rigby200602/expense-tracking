@@ -20,7 +20,7 @@ type AppProviderProps = {
 };
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const value = useMemo(
     () => ({ isCollapsed, setIsCollapsed }),
