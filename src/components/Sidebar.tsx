@@ -29,6 +29,7 @@ const Sidebar = ({ children }: SidebarProps) => {
           </span>
           <button
             onClick={() => setIsCollapsed((curr) => !curr)}
+            aria-label="Toggle sidebar"
             className={` ${isCollapsed ? "ml-1" : "ml-auto"} 
               text-white text-4xl pr-1 cursor-pointer hover:text-gray-400 transition-all duration-300 ease-in-out`}
           >
