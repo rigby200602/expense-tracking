@@ -1,12 +1,12 @@
 import Sidebar from "./components/Sidebar"
 import SidebarItem from "./components/SidebarItem"
 import { FaHome, FaChartLine, FaWallet, FaCog, FaQuestionCircle } from "react-icons/fa";
-
+import { Outlet } from "react-router";
 
 function App() {
 
   return (
-    <>
+    <div className="flex">
       <Sidebar>
         <SidebarItem icon={<FaHome />} label="Home" />
         <SidebarItem icon={<FaChartLine />} label="Analytics" />
@@ -14,7 +14,10 @@ function App() {
         <SidebarItem icon={<FaCog />} label="Settings" />
         <SidebarItem icon={<FaQuestionCircle />} label="Help" />
       </Sidebar>
-    </>
+      <div className="flex-1 p-4">
+        <Outlet />
+      </div>
+    </div>
   )
 }
 
