@@ -1,5 +1,5 @@
-import Sidebar from "./components/Sidebar"
-import SidebarItem from "./components/SidebarItem"
+import Sidebar from "./components/Sidebar/Sidebar"
+import SidebarItem from "./components/Sidebar/SidebarItem"
 import { FaHome, FaChartLine, FaWallet, FaCog, FaQuestionCircle } from "react-icons/fa";
 import { Outlet } from "react-router";
 
