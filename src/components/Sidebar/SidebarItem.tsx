@@ -8,7 +8,7 @@ type SidebarItemProps = {
 };
 // This sidebar item component takes in an icon, label, and an optional active prop to indicate if the item is currently active.
 // It uses Tailwind CSS classes for styling and includes hover effects for better user experience.
-import { useAppContext } from "../context/AppContext";
+import { useAppContext } from "../../context/AppContext";
 
 const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
   const { isCollapsed } = useAppContext();

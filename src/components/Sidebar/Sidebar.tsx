@@ -1,7 +1,7 @@
 // Using ReactNode as a type for children prop
 import type { ReactNode } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import { useAppContext } from "../context/AppContext";
+import { useAppContext } from "../../context/AppContext";
 
 type SidebarProps = {
   children: ReactNode;
