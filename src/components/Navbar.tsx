@@ -1,9 +1,12 @@
-
+import { useState } from "react";
 
 const Navbar = () => {
-  return (
-    <div className="text-white">Navbar</div>
-  )
-}
+    const [signIn, setSignIn] = useState(false);
+  return <div className="absolute right-0 pr-[1%]">
+        <div>
 
-export default Navbar
+        </div>
+    </div>;
+};
+
+export default Navbar;
