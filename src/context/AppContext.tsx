@@ -11,6 +11,8 @@ import {
 type AppContextType = {
   isCollapsed: boolean;
   setIsCollapsed: Dispatch<SetStateAction<boolean>>;
+  logIn: boolean;
+  setLogIn: Dispatch<SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -21,10 +23,11 @@ type AppProviderProps = {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [logIn, setLogIn] = useState(false);
 
   const value = useMemo(
-    () => ({ isCollapsed, setIsCollapsed }),
-    [isCollapsed]
+    () => ({ isCollapsed, setIsCollapsed,logIn, setLogIn }),
+    [isCollapsed, logIn]
   );
 
   return (
