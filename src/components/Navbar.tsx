@@ -20,7 +20,6 @@ const Navbar = () => {
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
-                  console.log(isOpen);
                 }}
                 className="cursor-pointer"
               >
