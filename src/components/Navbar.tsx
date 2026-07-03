@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { FaRegUserCircle } from "react-icons/fa";
+import { FaRegUserCircle, FaArrowDown  } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 
 const Navbar = () => {
@@ -16,7 +16,11 @@ const Navbar = () => {
           <div className="flex gap-2 font-medium cursor-pointer">
             <FaRegUserCircle className="text-3xl" />
             <p>Le Dien Thanh Tung</p>
-            
+            <div className="text-white">
+              <button className="cursor-pointer">
+                <FaArrowDown className="text-xl my-1"/>
+              </button>
+            </div>
           </div>
         )}
       </div>
