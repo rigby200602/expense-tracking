@@ -13,6 +13,8 @@ type AppContextType = {
   setIsCollapsed: Dispatch<SetStateAction<boolean>>;
   logIn: boolean;
   setLogIn: Dispatch<SetStateAction<boolean>>;
+  isOpen: any;
+  setIsOpen: Dispatch<SetStateAction<any>>;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
