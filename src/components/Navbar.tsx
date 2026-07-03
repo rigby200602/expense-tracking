@@ -39,7 +39,7 @@ const Navbar = () => {
                   <Link to="/profile">Profile</Link>
                 </li>
                 <li className="hover:text-blue-400">
-                  <Link to="sign-in" onClick={() => setLogIn(false)}>
+                  <Link to="/sign-in" onClick={() => setLogIn(false)}>
                     Logout
                   </Link>
                 </li>
