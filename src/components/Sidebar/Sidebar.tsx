@@ -11,7 +11,7 @@ const Sidebar = ({ children }: SidebarProps) => {
   const { isCollapsed, setIsCollapsed } = useAppContext();
 
   return (
-    <div className="h-screen">
+    <div className="h-screen hidden md:block">
       <div className={`h-full flex flex-col border-r border-gray-700 bg-[#0A0F16] shadow-sm transition-all duration-300 ease-in-out
         ${isCollapsed ? "w-20" : "w-64"}`
       }>

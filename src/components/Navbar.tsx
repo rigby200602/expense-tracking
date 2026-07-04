@@ -6,7 +6,7 @@ const Navbar = () => {
   const { logIn, isOpen, setIsOpen, setLogIn } = useAppContext();
 
   return (
-    <div className="absolute right-0 pr-[1%]">
+    <div className="absolute right-0 pr-[1%] hidden md:block">
       <div>
         {logIn ? (
           <Link className="" to="/login">
