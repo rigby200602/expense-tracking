@@ -3,12 +3,12 @@ import { FaRegUserCircle, FaArrowDown } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 
 const Navbar = () => {
-  const { logIn, isOpen, setIsOpen, setLogIn } = useAppContext();
+  const { isLoggedIn, isOpen, setIsOpen, setIsLoggedIn } = useAppContext();
 
   return (
     <div className="absolute right-0 pr-[1%] hidden md:block">
       <div>
-        {logIn ? (
+        {isLoggedIn ? (
           <Link className="" to="/login">
             Login
           </Link>
@@ -38,7 +38,7 @@ const Navbar = () => {
                   <Link to="/profile">Profile</Link>
                 </li>
                 <li className="hover:text-blue-400">
-                  <Link to="/sign-in" onClick={() => setLogIn(false)}>
+                  <Link to="/sign-in" onClick={() => setIsLoggedIn(false)}>
                     Logout
                   </Link>
                 </li>
