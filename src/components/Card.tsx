@@ -1,15 +1,21 @@
-import { MdAccountBalanceWallet } from "react-icons/md";
+;import type { ComponentType} from "react";
 
-const Card = () => {
+type CardProps = {
+    label: string;
+    num: number;
+    Icon: ComponentType<React.SVGProps<SVGSVGElement>>; // Optional icon prop
+}
+
+const Card = ({label,num, Icon}: CardProps) => {
   return (
     <div className="flex min-w-52 h-32 bg-gray-800 rounded-3xl p-4">
         <div className="flex flex-col mx-2">
-          <p className="text-gray-400">Total balance</p>
-          <p className="text-white font-medium text-4xl">40000</p>
+          <p className="text-gray-400">{label}</p>
+          <p className="text-white font-medium text-4xl">{num}</p>
         </div>
         <div className="bg-red-500 w-12 h-12 rounded-full p-3 ml-auto my-[4%]">
           <button className="cursor-pointer">
-            <MdAccountBalanceWallet className="text-2xl text-white" />
+            <Icon className="text-2xl text-white" />
           </button>
         </div> 
       </div>
