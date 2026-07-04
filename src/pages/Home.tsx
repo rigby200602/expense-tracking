@@ -1,13 +1,12 @@
+import Card from "../components/Card";
 
 
 const Home = () => {
   return (
-    <div className="text-white flex gap-4 flex-wrap">
-      <div className="w-[24%] h-32 bg-gray-800 rounded-3xl p-4 mt-[7%]">
-        <p>Total balance</p>
-      </div>
+    <div className="grid grid-cols-4 gap-4 flex-wrap mt-15">
+      <Card/>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
