@@ -22,7 +22,7 @@ function App() {
         <SidebarItem icon={<FaQuestionCircle />} label="Help" />
       </Sidebar>
       <Navbar />
-      <div className=" flex-1 p-4 text-white">
+      <div className="w-full p-4">
         <Outlet />
       </div>
     </div>
