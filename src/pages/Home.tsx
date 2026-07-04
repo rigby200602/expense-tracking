@@ -1,12 +1,21 @@
 import Card from "../components/Card";
-import { MdAccountBalanceWallet } from "react-icons/md";
+import { MdAccountBalanceWallet, MdOutlineAttachMoney, MdOutlineMoneyOff, MdOutlineSavings    } from "react-icons/md";
 
+
+const data = [
+  { label: "Total Balance", num: 40000, Icon: MdAccountBalanceWallet },
+  { label: "Total Income", num: 40000, Icon: MdOutlineAttachMoney  },
+  { label: "Total Expenses", num: 40000, Icon: MdOutlineMoneyOff  },
+  { label: "Net Savings", num: 40000, Icon: MdOutlineSavings  },
+]
 
 const Home = () => {
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 flex-wrap mt-15">
-        <Card label="Total balance" num={40000} Icon={MdAccountBalanceWallet}/>
+        {data.map((item, index) => (
+          <Card key={index} label={item.label} num={item.num} Icon={item.Icon} />
+        ))}
       </div>
     </div>
   );
