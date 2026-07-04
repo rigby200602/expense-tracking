@@ -6,29 +6,27 @@ const Navbar = () => {
   const { isLoggedIn, isOpen, setIsOpen, setIsLoggedIn } = useAppContext();
 
   return (
-    <div className="absolute right-0 pr-[1%] hidden md:block">
+    <div className="hidden md:block">
       <div>
         {isLoggedIn ? (
           <Link className="" to="/login">
             Login
           </Link>
         ) : (
-          <div className="flex gap-2 font-medium text-white p-4">
+          <div className="flex items-center gap-2 font-medium text-white p-4">
             <FaRegUserCircle className="text-3xl" />
             <p>Le Dien Thanh Tung</p>
-            <div className="cursor-pointer">
+            <div className="relative">
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}
                 className="cursor-pointer"
               >
-                <FaArrowDown className="flex flex-col text-xl my-1" />
+                <FaArrowDown className="flex text-xl my-1" />
               </button>
               <ul
-                className={`absolute right-0 w-24 border rounded-2xl border-gray-700 bg-gray-800 p-2 mx-2 text-center
-                transition-all duration-300 ease-in-out
-                ${
+                className={`absolute right-0 z-20 mt-2 w-24 rounded-2xl border border-gray-700 bg-gray-800 p-2 text-center text-white transition-all duration-300 ease-in-out ${
                   isOpen
                     ? "translate-y-0 opacity-100 visible"
                     : "-translate-y-2 opacity-0 invisible pointer-events-none"

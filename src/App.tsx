@@ -12,8 +12,7 @@ import { Outlet } from "react-router";
 
 function App() {
   return (
-    <div className="flex">
-      
+    <div className="flex min-h-screen">
       <Sidebar>
         <SidebarItem icon={<FaHome />} label="Home" />
         <SidebarItem icon={<FaChartLine />} label="Analytics" />
@@ -21,9 +20,13 @@ function App() {
         <SidebarItem icon={<FaCog />} label="Settings" />
         <SidebarItem icon={<FaQuestionCircle />} label="Help" />
       </Sidebar>
-      <Navbar />
-      <div className="w-full p-4">
-        <Outlet />
+      <div className="flex-1">
+        <div className="flex justify-end">
+          <Navbar />
+        </div>
+        <div className="w-full p-4">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
