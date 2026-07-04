@@ -20,8 +20,8 @@ function App() {
         <SidebarItem icon={<FaCog />} label="Settings" />
         <SidebarItem icon={<FaQuestionCircle />} label="Help" />
       </Sidebar>
+      <Navbar />
       <div className="flex-1 p-4 text-white">
-        <Navbar />
         <Outlet />
       </div>
     </div>

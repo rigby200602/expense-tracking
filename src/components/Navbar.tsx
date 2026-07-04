@@ -13,10 +13,10 @@ const Navbar = () => {
             Login
           </Link>
         ) : (
-          <div className="flex gap-2 font-medium">
+          <div className="flex gap-2 font-medium text-white p-4">
             <FaRegUserCircle className="text-3xl" />
             <p>Le Dien Thanh Tung</p>
-            <div className="text-white cursor-pointer">
+            <div className="cursor-pointer">
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
