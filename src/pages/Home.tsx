@@ -12,7 +12,7 @@ const data = [
 const Home = () => {
   return (
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 flex-wrap mt-15">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-16">
         {data.map((item) => (
           <Card key={item.label} label={item.label} num={item.num} Icon={item.Icon} />
         ))}
