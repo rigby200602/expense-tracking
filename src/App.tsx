@@ -13,6 +13,7 @@ import { Outlet } from "react-router";
 function App() {
   return (
     <div className="flex">
+      
       <Sidebar>
         <SidebarItem icon={<FaHome />} label="Home" />
         <SidebarItem icon={<FaChartLine />} label="Analytics" />
@@ -21,7 +22,7 @@ function App() {
         <SidebarItem icon={<FaQuestionCircle />} label="Help" />
       </Sidebar>
       <Navbar />
-      <div className="flex-1 p-4 text-white">
+      <div className=" flex-1 p-4 text-white">
         <Outlet />
       </div>
     </div>
