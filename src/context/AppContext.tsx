@@ -15,6 +15,7 @@ type AppContextType = {
   setIsLoggedIn : Dispatch<SetStateAction<boolean>>;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
+  currency: string
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -27,12 +28,13 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [currency] = useState("Đ");
 
   const value = useMemo(
     () => ({ isCollapsed, setIsCollapsed,
     isLoggedIn, setIsLoggedIn,
-    isOpen, setIsOpen }),
-    [isCollapsed, isLoggedIn, isOpen]
+    isOpen, setIsOpen, currency, }),
+    [isCollapsed, isLoggedIn, isOpen, currency]
   );
 
   return (
