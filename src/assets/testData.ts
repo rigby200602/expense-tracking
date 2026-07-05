@@ -1,15 +1,18 @@
-export type CardItem = {
+import { MdAccountBalanceWallet, MdOutlineAttachMoney, MdOutlineMoneyOff, MdOutlineSavings    } from "react-icons/md";
+
+
+export interface CardData {
   label: string;
   num: number;
-  icon: string;
-};
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
 
-export const Data: CardItem[] = [
-  { label: "Total Balance", num: 40000, icon: "wallet" },
-  { label: "Total Income", num: 40000, icon: "income" },
-  { label: "Total Expenses", num: 40000, icon: "expense" },
-  { label: "Net Savings", num: 40000, icon: "savings" },
-];
+export const data: CardData[] = [
+  { label: "Total Balance", num: 40000, Icon: MdAccountBalanceWallet },
+  { label: "Total Income", num: 40000, Icon: MdOutlineAttachMoney  },
+  { label: "Total Expenses", num: 40000, Icon: MdOutlineMoneyOff  },
+  { label: "Net Savings", num: 40000, Icon: MdOutlineSavings  },
+]
 
 export interface OverviewData {
   month: string;

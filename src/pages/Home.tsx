@@ -1,18 +1,6 @@
 import Card from "../components/Card";
-import { MdAccountBalanceWallet, MdOutlineAttachMoney, MdOutlineMoneyOff, MdOutlineSavings    } from "react-icons/md";
+import { data } from "../assets/testData";
 
-export interface CardData {
-  label: string;
-  num: number;
-  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-}
-
-const data: CardData[] = [
-  { label: "Total Balance", num: 40000, Icon: MdAccountBalanceWallet },
-  { label: "Total Income", num: 40000, Icon: MdOutlineAttachMoney  },
-  { label: "Total Expenses", num: 40000, Icon: MdOutlineMoneyOff  },
-  { label: "Net Savings", num: 40000, Icon: MdOutlineSavings  },
-]
 
 
 
