@@ -1,5 +1,29 @@
-import { MdAccountBalanceWallet, MdOutlineAttachMoney, MdOutlineMoneyOff, MdOutlineSavings    } from "react-icons/md";
+import { MdAccountBalanceWallet, 
+  MdOutlineAttachMoney, 
+  MdOutlineMoneyOff, 
+  MdOutlineSavings    } from "react-icons/md";
+import {
+  FaHome,
+  FaChartLine,
+  FaWallet,
+  FaCog,
+  FaQuestionCircle,
+} from "react-icons/fa";
 
+export interface SidebarData {
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  label: string;
+  url: string;
+  active?: boolean
+}
+
+export const sidebarData: SidebarData[] = [
+  { label: "Home", Icon: FaHome, url:"" },
+  { label: "Analytics", Icon: FaChartLine, url:"analytics" },
+  { label: "Wallet", Icon: FaWallet, url:"wallet" },
+  { label: "Settings", Icon: FaCog, url:"settings" },
+  { label: "Help", Icon: FaQuestionCircle, url:"help" },
+]
 
 export interface CardData {
   label: string;
