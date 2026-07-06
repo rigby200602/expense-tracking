@@ -19,7 +19,7 @@ const Home = () => {
         ))}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-4 text-white ">
-        <div className="w-full col-span-2 bg-gray-800 rounded-3xl p-4">
+        <div className="w-full md:col-span-2 bg-gray-800 rounded-3xl p-4">
           <Line
             data={{
               labels: overviewData.map((item) => item.month),
