@@ -8,7 +8,7 @@ ChartJS.defaults.color = "#fff";
 const Home = () => {
   return (
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data.map((item) => (
           <Card
             key={item.label}
@@ -18,8 +18,8 @@ const Home = () => {
           />
         ))}
       </div>
-      <div className="flex gap-4 mt-4 text-white">
-        <div className="w-2/3 bg-gray-800 rounded-3xl p-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 text-white ">
+        <div className="w-full  bg-gray-800 rounded-3xl p-4">
           <Line
             data={{
               labels: overviewData.map((item) => item.month),
@@ -42,7 +42,7 @@ const Home = () => {
             }}
           />
         </div>
-        <div className="w-1/3 bg-gray-800 rounded-3xl p-4">
+        <div className="w-full bg-gray-800 rounded-3xl mt-2 lg:mt-0 p-4">
           <Doughnut
             data={{
               labels: spendingCategory.map((item) => item.name),
