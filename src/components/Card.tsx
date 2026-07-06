@@ -10,7 +10,7 @@ type CardProps = {
 const Card = ({label,num, Icon}: CardProps) => {
   const { currency } = useAppContext();
   return (
-    <div className="flex h-32 bg-gray-800 rounded-3xl p-4 m-2">
+    <div className="flex h-32 bg-gray-800 rounded-3xl p-4">
         <div className="flex flex-col mx-2 w-[75%]">
           <p className="text-gray-400">{label}</p>
           <p className="text-white font-medium text-4xl">{num} {currency}</p>
