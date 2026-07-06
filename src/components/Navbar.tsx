@@ -1,9 +1,27 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router";
 import { FaRegUserCircle, FaArrowDown } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 
 const Navbar = () => {
   const { isLoggedIn, isOpen, setIsOpen, setIsLoggedIn } = useAppContext();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setIsOpen]);
 
   return (
     <div className="hidden md:block">
@@ -13,18 +31,18 @@ const Navbar = () => {
             Login
           </Link>
         ) : (
-          <div className="flex items-center gap-2 font-medium text-white p-4">
+          <div className="flex items-center gap-2 p-4 font-medium text-white">
             <FaRegUserCircle className="text-3xl" />
             <p>Le Dien Thanh Tung</p>
-            <div className="relative">
+
+            <div className="relative" ref={dropdownRef}>
               <button
-                onClick={() => {
-                  setIsOpen(!isOpen);
-                }}
+                onClick={() => setIsOpen(!isOpen)}
                 className="cursor-pointer"
               >
-                <FaArrowDown className="flex text-xl my-1" />
+                <FaArrowDown className="my-1 flex text-xl" />
               </button>
+
               <ul
                 className={`absolute right-0 z-20 mt-2 w-24 rounded-2xl border border-gray-700 bg-gray-800 p-2 text-center text-white transition-all duration-300 ease-in-out ${
                   isOpen
