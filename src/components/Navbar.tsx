@@ -1,7 +1,13 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router";
 import { FaRegUserCircle, FaArrowDown } from "react-icons/fa";
+import { IoMdMenu } from "react-icons/io";
 import { useAppContext } from "../context/AppContext";
+import type { ReactNode } from "react";
+
+type Props = {
+  children: ReactNode
+}
 
 
 const Navbar = () => {
@@ -10,6 +16,8 @@ const Navbar = () => {
     isOpen,
     setIsOpen,
     setIsLoggedIn,
+    isCollapsed,
+    setIsCollapsed,
   } = useAppContext();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -31,6 +39,7 @@ const Navbar = () => {
 
   return (
     <div>
+      {/* Build for big screens divices */}
       <div className="hidden md:block">
         {isLoggedIn ? (
           <Link className="" to="/login">
@@ -69,6 +78,14 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      {/* Build for small screens divices */}
+        <div className="block md:hidden">
+          <button 
+            onClick={() => {setIsCollapsed(curr => !curr); console.log(isCollapsed)}}
+          >
+            <IoMdMenu className="text-white text-4xl mx-4 mt-2"/>
+          </button>
+        </div>
     </div>
   );
 };
