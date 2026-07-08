@@ -3,7 +3,8 @@ import { Link } from "react-router";
 import { FaRegUserCircle, FaArrowDown } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { useAppContext } from "../context/AppContext";
-
+import { sidebarData as data } from "../assets/testData";
+import SidebarItem from "./Sidebar/SidebarItem";
 
 const Navbar = () => {
   const {
@@ -76,11 +77,23 @@ const Navbar = () => {
       {/* Mobile divices */}
       <div className="md:hidden">
         <button
-          onClick={() => setIsCollapsed(curr => !curr)}
+          onClick={() => setIsCollapsed((curr) => !curr)}
           className="mr-4 mt-4"
         >
           <IoMdMenu className="text-white text-3xl" />
         </button>
+        <ul className={`h-full flex flex-col z-50 pl-4 border-l border-gray-700 bg-[#0A0F16] shadow-sm transition-all duration-300 ease-in-out
+        ${isCollapsed ? "hidden" : "w-full"}`}
+        >
+          {data.map((item) => (
+            <SidebarItem
+              key={item.label}
+              Icon={item.Icon}
+              label={item.label}
+              url={item.url}
+            />
+          ))}
+        </ul>
       </div>
     </div>
   );
