@@ -12,10 +12,11 @@ const Sidebar = ({ children }: SidebarProps) => {
   const { isCollapsed, setIsCollapsed } = useAppContext();
 
   return (
-    <div className="h-screen flex md:block">
-      <div className={`h-full hidden md:flex flex-col border-r border-gray-700 bg-[#0A0F16] shadow-sm transition-all duration-300 ease-in-out
-        ${isCollapsed ? "w-20" : "w-64"}`
-      }>
+    <div className="h-screen hidden md:block">
+      <div
+        className={`h-full flex flex-col border-r border-gray-700 bg-[#0A0F16] shadow-sm transition-all duration-300 ease-in-out
+        ${isCollapsed ? "w-20" : "w-64"}`}
+      >
         <div className="p-4 pb-2 flex items-center">
           <img
             src="/src/assets/logo.png"
@@ -23,8 +24,11 @@ const Sidebar = ({ children }: SidebarProps) => {
             className={`overflow-hidden transition-all duration-300 ease-in-out ${isCollapsed ? "hidden" : "w-12"}`}
           />
           <span
-            className={`overflow-hidden transition-all duration-300 ease-in-out  ${isCollapsed ? "hidden" : 
-              "text-lg text-white font-semibold cursor-pointer"}`}
+            className={`overflow-hidden transition-all duration-300 ease-in-out  ${
+              isCollapsed
+                ? "hidden"
+                : "text-lg text-white font-semibold cursor-pointer"
+            }`}
           >
             FinTracker
           </span>
