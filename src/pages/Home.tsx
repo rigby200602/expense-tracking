@@ -5,6 +5,11 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 ChartJS.defaults.color = "#fff";
 
+const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+}
+
 const Home = () => {
   return (
     <div>
@@ -18,7 +23,7 @@ const Home = () => {
           />
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-4 text-white ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-4 text-white h-100">
         <div className="w-full md:col-span-2 bg-gray-800 rounded-3xl p-4">
           <Line
             data={{
@@ -37,9 +42,12 @@ const Home = () => {
                   borderColor: "rgba(255, 99, 132, 1)",
                   fill: true,
                   backgroundColor: "rgba(255, 99, 132, 0.2)",
+                  
                 },
               ],
-            }}
+            } 
+          }
+          options={options}
           />
         </div>
         <div className="w-full h-full bg-gray-800 rounded-3xl  p-4">
@@ -64,10 +72,11 @@ const Home = () => {
                     "rgba(75, 192, 192, 1)",
                     "rgba(153, 102, 255, 1)",
                   ],
-                  borderWidth: 1,
+                  
                 },
               ],
             }}
+            options={options}
           />
         </div>
       </div>
