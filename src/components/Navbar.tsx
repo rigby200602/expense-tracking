@@ -3,8 +3,14 @@ import { Link } from "react-router";
 import { FaRegUserCircle, FaArrowDown } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 
+
 const Navbar = () => {
-  const { isLoggedIn, isOpen, setIsOpen, setIsLoggedIn } = useAppContext();
+  const {
+    isLoggedIn,
+    isOpen,
+    setIsOpen,
+    setIsLoggedIn,
+  } = useAppContext();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,8 +30,8 @@ const Navbar = () => {
   }, [setIsOpen]);
 
   return (
-    <div className="hidden md:block">
-      <div>
+    <div>
+      <div className="hidden md:block">
         {isLoggedIn ? (
           <Link className="" to="/login">
             Login
