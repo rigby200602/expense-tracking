@@ -21,7 +21,7 @@ function App() {
         <div className="flex justify-end">
           <Navbar />
         </div>
-        <div className="w-full p-4">
+        <div className="w-full px-4">
           <Outlet />
         </div>
       </div>
