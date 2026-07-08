@@ -7,6 +7,8 @@ import { useAppContext } from "../context/AppContext";
 
 const Navbar = () => {
   const {
+    isCollapsed,
+    setIsCollapsed,
     isLoggedIn,
     isOpen,
     setIsOpen,
@@ -74,10 +76,10 @@ const Navbar = () => {
       {/* Mobile divices */}
       <div className="md:hidden">
         <button
-          onClick={() => {}}
-          className="text-white text-3xl mr-4 mt-4"
+          onClick={() => setIsCollapsed(curr => !curr)}
+          className="mr-4 mt-4"
         >
-          <IoMdMenu />
+          <IoMdMenu className="text-white text-3xl" />
         </button>
       </div>
     </div>
