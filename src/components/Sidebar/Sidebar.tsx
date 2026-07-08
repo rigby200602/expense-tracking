@@ -13,7 +13,7 @@ const Sidebar = ({ children }: SidebarProps) => {
   return (
     <div className="h-screen hidden md:block">
       <div
-        className={`h-full flex flex-col  border-r border-gray-700 bg-[#0A0F16] shadow-sm transition-all duration-300 ease-in-out
+        className={`min-h-screen flex flex-col  border-r border-gray-700 bg-[#0A0F16] shadow-sm transition-all duration-300 ease-in-out
         ${isCollapsed ? "w-20" : "w-64"}`}
       >
         <div className="p-4 pb-2 flex items-center">
