@@ -12,6 +12,7 @@ const Sidebar = ({ children }: SidebarProps) => {
 
   return (
     <div className="h-screen hidden md:block">
+      {/* For large divices */}
       <div className={`h-full flex flex-col border-r border-gray-700 bg-[#0A0F16] shadow-sm transition-all duration-300 ease-in-out
         ${isCollapsed ? "w-20" : "w-64"}`
       }>
@@ -37,6 +38,10 @@ const Sidebar = ({ children }: SidebarProps) => {
           </button>
         </div>
         <ul className="flex flex-col gap-2 p-4 text-gray-400">{children}</ul>
+      </div>
+      {/* For small divices */}
+      <div className="block md:hidden">
+
       </div>
     </div>
   );
