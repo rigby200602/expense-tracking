@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router";
 import { FaRegUserCircle, FaArrowDown } from "react-icons/fa";
+import { IoMdMenu } from "react-icons/io";
 import { useAppContext } from "../context/AppContext";
 
 
@@ -69,6 +70,15 @@ const Navbar = () => {
             </div>
           </div>
         )}
+      </div>
+      {/* Mobile divices */}
+      <div className="md:hidden">
+        <button
+          onClick={() => {}}
+          className="text-white text-3xl mr-4 mt-4"
+        >
+          <IoMdMenu />
+        </button>
       </div>
     </div>
   );
