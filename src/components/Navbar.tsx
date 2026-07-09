@@ -4,6 +4,7 @@ import { FaRegUserCircle, FaArrowDown } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { useAppContext } from "../context/AppContext";
 import { sidebarData as data } from "../assets/testData";
+import { CiLogout } from "react-icons/ci";
 
 const Navbar = () => {
   const {
@@ -84,7 +85,9 @@ const Navbar = () => {
 
         <div
           className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 ${
-            isCollapsed ? "pointer-events-none opacity-0" : "pointer-events-auto opacity-60"
+            isCollapsed
+              ? "pointer-events-none opacity-0"
+              : "pointer-events-auto opacity-60"
           }`}
           onClick={() => setIsCollapsed(false)}
         />
@@ -95,7 +98,7 @@ const Navbar = () => {
           }`}
         >
           <div className="mb-4 flex items-center justify-between">
-            <img src="/src/assets/logo.png" className="w-12 h-12"/>
+            <img src="/src/assets/logo.png" className="w-12 h-12" />
             <button
               onClick={() => setIsCollapsed(true)}
               className="text-2xl text-white"
@@ -121,6 +124,12 @@ const Navbar = () => {
                 </li>
               );
             })}
+            <li className="flex gap-3 p-2">
+              <button>
+                <CiLogout className="text-white text-xl" />
+              </button>
+              <p className="text-white text-xl">Logout</p>
+            </li>
           </ul>
         </div>
       </div>
