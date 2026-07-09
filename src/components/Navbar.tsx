@@ -108,7 +108,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-2 h-[90%]">
             {data.map((item) => {
               const Icon = item.Icon;
               return (
@@ -124,11 +124,13 @@ const Navbar = () => {
                 </li>
               );
             })}
-            <li className="flex gap-3 p-2">
-              <button>
-                <CiLogout className="text-white text-xl" />
-              </button>
-              <p className="text-white text-xl">Logout</p>
+            <li className="flex flex-col h-full gap-3 p-2 text-white text-xl justify-end">
+              <div className="flex flex-row gap-3">
+                <button>
+                  <CiLogout />
+                </button>
+                <p>Logout</p>
+              </div>
             </li>
           </ul>
         </div>
