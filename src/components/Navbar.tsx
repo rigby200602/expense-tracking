@@ -113,7 +113,7 @@ const Navbar = () => {
                   <Link
                     to={`/${item.url}`}
                     onClick={() => setIsCollapsed(false)}
-                    className="flex items-center gap-3 rounded-md p-2 text-white transition hover:bg-gray-700"
+                    className="flex items-center gap-3 rounded-md p-2 text-white text-xl transition hover:bg-gray-700"
                   >
                     <Icon className="text-xl" />
                     <span>{item.label}</span>
