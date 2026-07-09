@@ -4,7 +4,6 @@ import { FaRegUserCircle, FaArrowDown } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { useAppContext } from "../context/AppContext";
 import { sidebarData as data } from "../assets/testData";
-import SidebarItem from "./Sidebar/SidebarItem";
 
 const Navbar = () => {
   const {
@@ -82,18 +81,48 @@ const Navbar = () => {
         >
           <IoMdMenu className="text-white text-3xl" />
         </button>
-        <ul className={`h-full flex flex-col z-50 pl-4 border-l border-gray-700 bg-[#0A0F16] shadow-sm transition-all duration-300 ease-in-out
-        ${isCollapsed ? "hidden" : "w-full"}`}
+
+        <div
+          className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 ${
+            isCollapsed ? "pointer-events-none opacity-0" : "pointer-events-auto opacity-60"
+          }`}
+          onClick={() => setIsCollapsed(false)}
+        />
+
+        <div
+          className={`fixed right-0 top-0 z-50 h-full w-72 border-l border-gray-700 bg-[#0A0F16] p-4 shadow-xl transition-transform duration-300 ease-in-out ${
+            isCollapsed ? "translate-x-full" : "translate-x-0"
+          }`}
         >
-          {data.map((item) => (
-            <SidebarItem
-              key={item.label}
-              Icon={item.Icon}
-              label={item.label}
-              url={item.url}
-            />
-          ))}
-        </ul>
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-white">Menu</h2>
+            <button
+              onClick={() => setIsCollapsed(true)}
+              className="text-2xl text-white"
+              aria-label="Close menu"
+            >
+              ×
+            </button>
+          </div>
+
+          <ul className="flex flex-col gap-2">
+            {data.map((item) => {
+              const Icon = item.Icon;
+              return (
+                <li key={item.label}>
+                  <Link
+                    to={`/${item.url}`}
+                    onClick={() => setIsCollapsed(false)}
+                    className="flex items-center gap-3 rounded-md p-2 text-white transition hover:bg-gray-700"
+                  >
+                    <Icon className="text-xl" />
+                    <span>{item.label}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );
