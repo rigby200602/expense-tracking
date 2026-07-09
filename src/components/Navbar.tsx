@@ -95,7 +95,7 @@ const Navbar = () => {
           }`}
         >
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-white">Menu</h2>
+            <img src="/src/assets/logo.png" className="w-12 h-12"/>
             <button
               onClick={() => setIsCollapsed(true)}
               className="text-2xl text-white"
