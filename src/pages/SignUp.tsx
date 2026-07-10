@@ -21,7 +21,7 @@ const SignIn = () => {
               className="rounded-4xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
             />
             <input
-              id="password"
+              id="password-check"
               type="password"
               placeholder="Enter your password again"
               title="Enter your password again"
