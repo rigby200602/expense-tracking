@@ -11,5 +11,6 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 1000px #131A24 inset;
     -webkit-text-fill-color: white;
+    caret-color: #ffffff; 
     transition: background-color 5000s ease-in-out 0s;
 }
