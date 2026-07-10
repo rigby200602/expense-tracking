@@ -10,7 +10,7 @@ const SignIn = () => {
               placeholder="Email"
               title="Enter your email"
               autoComplete="email"
-              className="rounded-xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
+              className="rounded-4xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
             />
             <input
               id="password"
@@ -18,8 +18,9 @@ const SignIn = () => {
               placeholder="Password"
               title="Enter your password"
               autoComplete="off"
-              className="rounded-xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
+              className="rounded-4xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
             />
+            <button className="bg-blue-600 h-[15%] w-full rounded-4xl px-4">Sign in</button>
           </div>
         </div>
       </div>
