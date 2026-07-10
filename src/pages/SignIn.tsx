@@ -5,26 +5,28 @@ const SignIn = () => {
         <p className="text-center text-3xl font-bold">Sign in</p>
         <div className="flex flex-col h-full my-[10%] mx-[10%] text-xl gap-[15%]">
           <div className="w-full">
-            <p className="mb-2 text-gray-400">Email:</p>
             <input
               id="email"
               type="email"
               placeholder="Email"
               title="Enter your email"
               autoComplete="email"
-              className="rounded-xl px-4 bg-[#131A24] w-full h-full outline-0 autofill:bg-amber-900"
+              className="block w-full py-2.5 px-0 text-sm text-white bg-transparent border-0 border-gray-300
+              appearance-none focus:outline-none focus:ring-0 focus:text-white peer"
             />
+            <label htmlFor="">Email</label>l
           </div>
           <div className="w-full">
-            <p className="mb-2 text-gray-400">Password:</p>
             <input
               id="password"
               type="password"
               placeholder="Password"
               title="Enter your password"
               autoComplete="off"
-              className="rounded-xl px-4 bg-[#131A24] w-full h-full outline-0"
+              className="block w-full py-2.5 px-0 text-sm text-white bg-transparent border-0 border-gray-300
+              appearance-none focus:outline-none focus:ring-0 focus:text-white peer"
             />
+            <label htmlFor="">Password</label>
           </div>
         </div>
       </div>
