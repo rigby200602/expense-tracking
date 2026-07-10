@@ -12,7 +12,8 @@ const options = {
 
 const Home = () => {
   return (
-    <div>
+    <>
+      <h1 className="absolute top-0 text-white font-medium text-4xl my-4 px-1">Dashboard</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {data.map((item) => (
           <Card
@@ -82,7 +83,7 @@ const Home = () => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
