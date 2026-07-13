@@ -30,7 +30,7 @@ const SignIn = () => {
               autoComplete="off"
               className="rounded-4xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
             />
-            <Link to="/sign-up" className="hover:text-white text-gray-400">
+            <Link to="/sign-in" className="hover:text-white text-gray-400">
               <p className="text-sm text-right ">Already have one?</p>
             </Link>
             <button onClick={() => {}}
