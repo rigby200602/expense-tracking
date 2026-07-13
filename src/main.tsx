@@ -5,8 +5,8 @@ import { AppProvider } from "./context/AppContext.tsx";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home.tsx";
-import SignIn from "./pages/SignIn.tsx";
-import SignUp from "./pages/SignUp.tsx";
+import SignIn from "./pages/Account/SignIn.tsx";
+import SignUp from "./pages/Account/SignUp.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
