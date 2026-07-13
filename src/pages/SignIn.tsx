@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const SignIn = () => {
   return (
     <div className="hidden lg:flex justify-center items-center text-white h-screen my-auto">
@@ -22,7 +24,9 @@ const SignIn = () => {
               autoComplete="off"
               className="rounded-4xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
             />
-            <p className="text-sm text-right text-gray-400">Do not have an account?</p>
+            <Link to="/sign-up" className="hover:text-white text-gray-400">
+              <p className="text-sm text-right ">Do not have an account?</p>
+            </Link>
             <button onClick={() => {}}
             className="bg-blue-600 hover:bg-blue-300 hover:text-black font-medium h-[15%] w-full rounded-4xl px-4 cursor-pointer">Sign in</button>
           </div>
