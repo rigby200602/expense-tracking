@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home.tsx";
 import SignIn from "./pages/Account/SignIn.tsx";
 import SignUp from "./pages/Account/SignUp.tsx";
+import Profile from "./pages/Profile.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -14,10 +15,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
-            <Route index element={<Home />}/>
+            <Route index element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
-          <Route path="/sign-in" element={<SignIn />}/>
-          <Route path="/sign-up" element={<SignUp />}/>
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </AppProvider>
