@@ -4,6 +4,7 @@ const SignIn = () => {
       <div className="flex flex-col bg-[#0A0F16] border border-gray-700 rounded-2xl shadow-2xl w-1/3 h-4/5 py-[2%]">
         <p className="text-center text-3xl font-bold">Sign in</p>
         <div className="flex flex-col h-full my-[10%] mx-[10%] text-xl gap-4">
+            <p className="text-lg">Email<span className="text-red-600">*</span>:</p>
             <input
               id="email"
               type="email"
@@ -12,6 +13,7 @@ const SignIn = () => {
               autoComplete="email"
               className="rounded-4xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
             />
+            <p className="text-lg">Password<span className="text-red-600">*</span>:</p>
             <input
               id="password"
               type="password"
