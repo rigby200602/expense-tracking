@@ -20,6 +20,7 @@ const SignIn = () => {
               autoComplete="off"
               className="rounded-4xl px-4 bg-[#131A24] w-full h-[15%] outline-0"
             />
+            <p className="text-sm text-right text-gray-400">Do not have an account?</p>
             <button onClick={() => {}}
             className="bg-blue-600 hover:bg-blue-300 hover:text-black font-medium h-[15%] w-full rounded-4xl px-4 cursor-pointer">Sign in</button>
           </div>
