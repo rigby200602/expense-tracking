@@ -1,7 +1,9 @@
-import { MdAccountBalanceWallet, 
-  MdOutlineAttachMoney, 
-  MdOutlineMoneyOff, 
-  MdOutlineSavings    } from "react-icons/md";
+import {
+  MdAccountBalanceWallet,
+  MdOutlineAttachMoney,
+  MdOutlineMoneyOff,
+  MdOutlineSavings
+} from "react-icons/md";
 import {
   FaHome,
   FaChartLine,
@@ -9,7 +11,7 @@ import {
   FaCog,
   FaQuestionCircle,
 } from "react-icons/fa";
-
+import { CgProfile } from "react-icons/cg";
 export interface SidebarData {
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   label: string;
@@ -18,11 +20,12 @@ export interface SidebarData {
 }
 
 export const sidebarData: SidebarData[] = [
-  { label: "Home", Icon: FaHome, url:"" },
-  { label: "Analytics", Icon: FaChartLine, url:"analytics" },
-  { label: "Wallet", Icon: FaWallet, url:"wallet" },
-  { label: "Settings", Icon: FaCog, url:"settings" },
-  { label: "Help", Icon: FaQuestionCircle, url:"help" },
+  { label: "Home", Icon: FaHome, url: "" },
+  { label: "Profile", Icon: CgProfile, url: "profile" },
+  { label: "Analytics", Icon: FaChartLine, url: "analytics" },
+  { label: "Wallet", Icon: FaWallet, url: "wallet" },
+  { label: "Settings", Icon: FaCog, url: "settings" },
+  { label: "Help", Icon: FaQuestionCircle, url: "help" },
 ]
 
 export interface CardData {
@@ -33,9 +36,9 @@ export interface CardData {
 
 export const data: CardData[] = [
   { label: "Total Balance", num: 40000, Icon: MdAccountBalanceWallet },
-  { label: "Total Income", num: 40000, Icon: MdOutlineAttachMoney  },
-  { label: "Total Expenses", num: 40000, Icon: MdOutlineMoneyOff  },
-  { label: "Net Savings", num: 40000, Icon: MdOutlineSavings  },
+  { label: "Total Income", num: 40000, Icon: MdOutlineAttachMoney },
+  { label: "Total Expenses", num: 40000, Icon: MdOutlineMoneyOff },
+  { label: "Net Savings", num: 40000, Icon: MdOutlineSavings },
 ]
 
 export interface OverviewData {
