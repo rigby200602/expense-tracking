@@ -1,0 +1,26 @@
+{
+  "name": "expense-tracking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rigby200602/expense-tracking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rigby200602/expense-tracking/issues"
+  },
+  "homepage": "https://github.com/rigby200602/expense-tracking#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
