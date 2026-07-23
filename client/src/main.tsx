@@ -18,8 +18,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route index element={<Home />} />
             <Route path="/profile" element={<Profile />} />
           </Route>
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/register" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </AppProvider>
