@@ -1,7 +1,9 @@
 import type { Request, Response } from "express"
 
-const AuthController = () => {
-
+export const register = (req: Request, res: Response) => {
+    return res.json({ message: "Register endpoint" })
 }
 
-export default AuthController;
+export const AuthController = {
+    register
+}
