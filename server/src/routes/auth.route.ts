@@ -4,8 +4,8 @@ import { AuthController } from '../controllers/auth.controller.ts'
 const authRouter = Router()
 
 authRouter.post('/register', AuthController. register)
-// authRouter.post('/login', AuthController)
-// authRouter.post('/logout', AuthController)
-// authRouter.get('/profile', AuthController)
+authRouter.post('/login', AuthController.login)
+authRouter.post('/logout', AuthController.logout)
+authRouter.get('/profile', AuthController.profile)
 
 export default authRouter
