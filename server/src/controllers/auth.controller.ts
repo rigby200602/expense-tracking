@@ -12,10 +12,3 @@ export const logout = (req: Request, res: Response) => {
 export const profile = (req: Request, res: Response) => {
     return res.json({ message: "Profile endpoint" })
 }
-
-export const AuthController = {
-    register,
-    login,
-    logout,
-    profile
-}
