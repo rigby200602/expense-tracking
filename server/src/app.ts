@@ -6,7 +6,7 @@ const app: Express = express();
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
-
+// Authentication Routes
 app.use('/api/auth', authRouter);
 
 app.listen(3000);
