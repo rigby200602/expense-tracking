@@ -9,6 +9,5 @@ app.get('/', (req: Request, res: Response) => {
 // Authentication Routes
 app.use('/api/auth', authRouter);
 
-app.listen(3000);
 
 export default app
