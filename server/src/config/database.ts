@@ -1,3 +1,1 @@
-export const database = () => {
-
-}
+export const database = {}

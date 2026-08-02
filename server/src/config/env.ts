@@ -1,3 +1,1 @@
-export const env = () => {
-
-}
+export const env = {}
