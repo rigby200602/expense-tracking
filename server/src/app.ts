@@ -3,7 +3,7 @@ import authRouter from './routes/auth.route.ts';
 
 const app: Express = express();
 
-// Json parser
+// Parse incoming JSON requests
 app.use(express.json());
 
 app.get('/', (req: Request, res: Response) => {
