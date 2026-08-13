@@ -8,7 +8,7 @@ datasource db {
 }
 
 model budget {
-  id      String  @id @db.Uuid
+  id      String  @id @db.Uuid @default(uuid())
   month   Int?    @db.SmallInt
   year    Int?    @db.SmallInt
   amount  BigInt?
@@ -17,7 +17,7 @@ model budget {
 }
 
 model categories {
-  id           String         @id @db.Uuid
+  id           String         @id @db.Uuid @default(uuid())
   name         String         @db.VarChar(50)
   type         String         @db.VarChar(20)
   color        String         @db.VarChar(30)
@@ -29,7 +29,7 @@ model categories {
 }
 
 model transactions {
-  id          String           @id @db.Uuid
+  id          String           @id @db.Uuid @default(uuid())
   amount      BigInt?
   note        String?
   date        DateTime?        @db.Date
@@ -42,7 +42,7 @@ model transactions {
 }
 
 model users {
-  id           String         @id @db.Uuid
+  id           String         @id @db.Uuid @default(uuid())
   name         String         @db.VarChar(100)
   email        String?        @unique @db.VarChar(125)
   password     String         @db.VarChar(255)
