@@ -2,6 +2,7 @@ import { prisma } from "./config/prisma.ts";
 
 async function main() {
   try {
+    // add a new user to the database
     const user = await prisma.users.create({
       data: {
         name: "Tung 2",
