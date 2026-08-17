@@ -11,23 +11,34 @@ async function main() {
     //   },
     // });
     // find users in the database
-    const foundUser = await prisma.users.findUnique({
+    // const foundUser = await prisma.users.findUnique({
+    //   where: {
+    //     email: "tung@test.com",
+    //   },
+    //   include: {
+    //     categories: true,
+    //     transactions: true,
+    //   },
+    // });
+    // console.log("Found user:");
+    // console.log(foundUser);
+    // update user in the database
+    const updatedUser = await prisma.users.update({
       where: {
         email: "tung@test.com",
       },
-      include: {
-        categories: true,
-        transactions: true,
+      data: {
+        name: "Tung Updated",
       },
     });
 
-    console.log("Found user:");
-    console.log(foundUser);
+    console.log("Updated user:");
+    console.log(updatedUser);
 
-    const users = await prisma.users.findMany();
+    // const users = await prisma.users.findMany();
 
-    console.log("All users:");
-    console.log(users);
+    // console.log("All users:");
+    // console.log(users);
   } catch (error) {
     console.error("Database error:", error);
   } finally {
