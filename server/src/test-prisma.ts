@@ -11,15 +11,25 @@ async function main() {
     //   },
     // });
     // find users in the database
-    const foundUsers = await prisma.users.findMany({
-      where: {
-        name: {
-          contains: "Tung"
-        }
-      },
-    })
+    // const foundUsers = await prisma.users.findMany({
+    //   where: {
+    //     name: {
+    //       contains: "Tung"
+    //     }
+    //   },
+    // })
     // console.log("Found user:");
     // console.log(foundUser);
+    // find transactions, amount > 
+    const foundTransactions = await prisma.transactions.findMany({
+      where: {
+        amount: {
+          gt: 10000000
+        }
+      }
+    })
+    console.log("Found:")
+    console.log(foundTransactions)
     // update user in the database
     // const updatedUser = await prisma.users.update({
     //   where: {
@@ -57,8 +67,8 @@ async function main() {
     // console.log(user1);
     // const users = await prisma.users.findMany();
 
-    console.log("All users:");
-    console.log(foundUsers);
+    // console.log("All users:");
+    // console.log(foundUsers);
   } catch (error) {
     console.error("Database error:", error);
   } finally {
