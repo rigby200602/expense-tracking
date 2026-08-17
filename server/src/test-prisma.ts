@@ -47,6 +47,7 @@ async function main() {
         email: "delete@test.com",
       },
     });
+    // find deleted user
     const user1 = await prisma.users.findUnique({
       where: {
         email: "delete@test.com",
