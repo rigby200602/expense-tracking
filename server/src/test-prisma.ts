@@ -23,18 +23,39 @@ async function main() {
     // console.log("Found user:");
     // console.log(foundUser);
     // update user in the database
-    const updatedUser = await prisma.users.update({
-      where: {
-        email: "tung@test.com",
-      },
+    // const updatedUser = await prisma.users.update({
+    //   where: {
+    //     email: "tung@test.com",
+    //   },
+    //   data: {
+    //     name: "Tung Updated",
+    //   },
+    // });
+    // console.log("Updated user:");
+    // console.log(updatedUser);
+    // delete user in the database
+    // create test data
+    const user = await prisma.users.create({
       data: {
-        name: "Tung Updated",
+        name: "Delete Test",
+        email: "delete@test.com",
+        password: "123456",
+      },
+    });
+    const deletedUser = await prisma.users.delete({
+      where: {
+        email: "delete@test.com",
+      },
+    });
+    const user1 = await prisma.users.findUnique({
+      where: {
+        email: "delete@test.com",
       },
     });
 
-    console.log("Updated user:");
-    console.log(updatedUser);
-
+    console.log("Deleted user:");
+    console.log(deletedUser);
+    console.log(user1);
     // const users = await prisma.users.findMany();
 
     // console.log("All users:");
