@@ -15,6 +15,11 @@ async function main() {
       where: {
         email: "tung@test.com",
       },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+      },
     });
 
     console.log("Found user:");
