@@ -15,10 +15,9 @@ async function main() {
       where: {
         email: "tung@test.com",
       },
-      select: {
-        id: true,
-        name: true,
-        email: true,
+      include: {
+        categories: true,
+        transactions: true,
       },
     });
 
