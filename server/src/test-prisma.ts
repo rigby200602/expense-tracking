@@ -21,10 +21,10 @@ async function main() {
     // console.log("Found user:");
     // console.log(foundUser);
     // find transactions, amount > 
-    const foundTransactions = await prisma.transactions.findMany({
+    const foundTransactions = await prisma.users.findMany({
       where: {
-        amount: {
-          gt: 10000000
+        email : {
+          in: ["tung@test.com", "tung2@test.com"]
         }
       }
     })
