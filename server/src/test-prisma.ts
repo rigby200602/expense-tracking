@@ -12,15 +12,11 @@ async function main() {
     // });
     const foundUser = await prisma.users.findMany({
       where: {
-        AND: {
-          name: {
-            contains: "Tung",
-          },
-          email: {
-            contains: "test.com",
-          },
+        OR: [
+          { name: { contains: "Tung" } },
+          { email: { contains: "tung" } },
+        ],
         },
-        }
       }
     )
     console.log("Found:")
