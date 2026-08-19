@@ -12,11 +12,17 @@ async function main() {
     // });
     const foundUser = await prisma.users.findMany({
       where: {
-        email : {
-          notIn: ["tung@test.com", "tung2@test.com"]
+        AND: {
+          name: {
+            contains: "Tung",
+          },
+          email: {
+            contains: "test.com",
+          },
+        },
         }
       }
-    })
+    )
     console.log("Found:")
     console.log(foundUser)
   } catch (error) {
