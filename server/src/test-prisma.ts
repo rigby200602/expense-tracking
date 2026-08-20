@@ -11,17 +11,23 @@ async function main() {
     //   },
     // });
     const foundUser = await prisma.users.findMany({
-      where: {
+  where: {
+    AND: [
+      {
         categories: {
-          some: {
-            name: {
-              contains: "Food",
-            }
+          some: {},
+        },
+      },
+      {
+        categories: {
+          every: {
+            type: "expense",
           },
         },
       },
-    }
-    )
+    ],
+  },
+});
     console.log("Found:")
     console.log(foundUser)
   } catch (error) {
