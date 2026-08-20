@@ -10,6 +10,20 @@ async function main() {
     //     password: "123456",
     //   },
     // });
+    const user = await prisma.users.findUnique({
+      where: {
+        email: "tung@test.com",
+      },
+    });
+    const categorie = await prisma.categories.create({
+      data: {
+        name: "Food",
+        type: "expense",
+        color: "red",
+        icon: "food",
+        user_id: user!.id,
+      },
+    })
     const foundUser = await prisma.users.findMany({
       where: {
         categories: {
